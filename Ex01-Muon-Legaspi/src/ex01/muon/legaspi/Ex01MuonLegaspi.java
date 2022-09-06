@@ -16,7 +16,13 @@ public class Ex01MuonLegaspi {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        String nameOne = "Patric Legaspi";
+        int ageOne = 15;
+        double heightOne = 170.18;
         
+        String nameTwo = "Spongebob Squarepants";
+        int ageTwo = 23;
+        int episodesTwo = 250;
     }
     
 }
