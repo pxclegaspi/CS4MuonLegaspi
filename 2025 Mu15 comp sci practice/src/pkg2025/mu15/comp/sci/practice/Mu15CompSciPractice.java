@@ -38,9 +38,19 @@ public class Mu15CompSciPractice {
         }
         
         Scanner sc = new Scanner(System.in);
-        System.out.print("Enter name: ");
+        System.out.print("Enter number: ");
         String inputExample = sc.nextLine();
         int result = Integer.parseInt(inputExample);
+        
+        Student mark = new Student("Mark");
+        mark.name = "Mark";
+        mark.grade = 1.75;
+        mark.money = 500;
+        mark.introduce();
+        
+        Student josh = new Student("Josh");
+        josh.name = "Josh";
+        josh.introduce();
     }
     
 }
