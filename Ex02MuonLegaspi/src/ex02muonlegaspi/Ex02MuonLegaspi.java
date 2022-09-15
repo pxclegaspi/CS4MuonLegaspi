@@ -37,12 +37,16 @@ public class Ex02MuonLegaspi {
                     do {
                         int randomNumber = (int) Math.floor(Math.random() * rangeOfIntegers) + minimumInteger;
                         System.out.printf("%nThe minimum integer is %s, and the maximum integer is %s. Let's begin!%n", minimumInteger, maximumInteger);
-                    
+                        
+                        if(guessCount <= 0) {
+                            System.out.println("Oops! The number of guesses is invalid. To change it, go to 'Change settings' in the main menu.");
+                        }
+                        
                         for(int i = guessCount; i > 0; i--) {
                             System.out.printf("You have %s guess(es) left! What's your guess? ", i);
                             String guessString = sc.nextLine();
                             int guessInteger;
-                            while(!guessString.matches("[0-9]+")) {
+                            while(!guessString.matches("-?[0-9]+")) {
                                 System.out.print("That's probably not a integer. Try again. ");
                                 guessString = sc.nextLine();
                             }
@@ -81,15 +85,31 @@ public class Ex02MuonLegaspi {
                     do {
                         String minimumIntegerString, maximumIntegerString, guessCountString;
 
-                        System.out.printf("%nWhat will be the new minimum number? ");
+                        System.out.printf("%nWhat will be the new minimum integer? ");
                         minimumIntegerString = sc.nextLine();
+                        while(!minimumIntegerString.matches("-?[0-9]+")) {
+                                System.out.print("That's probably not a integer. Try again. ");
+                                minimumIntegerString = sc.nextLine();
+                            }
                         minimumInteger = Integer.parseInt(minimumIntegerString);
-                        System.out.print("What will be the new upper limit? ");
+                        
+                        System.out.print("What will be the new maximum integer? ");
                         maximumIntegerString = sc.nextLine();
+                        while(!maximumIntegerString.matches("-?[0-9]+")) {
+                                System.out.print("That's probably not a integer. Try again. ");
+                                maximumIntegerString = sc.nextLine();
+                            }
                         maximumInteger = Integer.parseInt(maximumIntegerString);
+                        
                         System.out.print("What will be the new number of guesses? ");
                         guessCountString = sc.nextLine();
+                        while(!guessCountString.matches("-?[0-9]+")) {
+                                System.out.print("That's probably not a integer. Try again. ");
+                                guessCountString = sc.nextLine();
+                            }
                         guessCount = Integer.parseInt(guessCountString);
+                        
+                        rangeOfIntegers = maximumInteger - minimumInteger + 1;
 
                         System.out.printf("The new minimum integer is %s. The new maximum integer is %s. The new number of guesses is %s.%n", minimumInteger, maximumInteger, guessCount);
 
@@ -106,7 +126,7 @@ public class Ex02MuonLegaspi {
                     break;
                 default:
                     System.out.printf("Sorry, we can't recognize your input.%n%n");
-                    break;
+                    break;  
             }
         }
     }
