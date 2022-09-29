@@ -19,27 +19,18 @@ public class Ex03MuonLegaspi {
         // TODO code application logic here
         Scanner sc = new Scanner(System.in);
         
-        sampleClass inMainClass = new sampleClass();
-        System.out.println(inMainClass.phrase);
-        
-        System.out.print("How many times do you want me to write 'I love copypasta!'? ");
-        inMainClass.counter = sc.nextInt();
-        while(inMainClass.counter < 0) {
-            System.out.print("Silly human. There's no such thing as a negative number of times! Type another integer. ");
-            inMainClass.counter = sc.nextInt();
-        }
-        for(int i = 0; i < inMainClass.counter; i++) {
-            System.out.println("I love copypasta!");
-        }
+        Sample sample1 = new Sample();
+        Sample sample2 = new Sample();
+        Sample sample3 = new Sample();
         
         System.out.print("Thank you for using a sample test for the class! Type anything to continue. ");
         do {
-            inMainClass.anything = sc.nextLine();
-        } while(inMainClass.anything == "");
+            loveCopypasta.anything = sc.nextLine();
+        } while("".equals(loveCopypasta.anything));
         System.out.printf("%n%n%n%n%n%n%n");
         
-        
-        
+        Song sunshineRainbowWhitePony = new Song();
+        Singer wowkieZhang = new Singer();
     }
     
 }
