@@ -1,7 +1,6 @@
 package ex05muonlegaspi;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class Store {
   private String name;
@@ -11,7 +10,7 @@ public class Store {
 
   public Store(String n){
     // Initialize name to parameter and earnings to zero
-    n = name;
+    name = n;
     earnings = 0;
     // Initialize itemList as a new ArrayList
     itemList = new ArrayList<Item>();
@@ -30,7 +29,7 @@ public class Store {
     // get Item at index from itemList and add its cost to earnings
     // print statement indicating the sale
     if(index > itemList.size()) {
-        System.out.printf("Sorry, there are only %d items in the store.%n", itemList.size());
+        System.out.printf("Sorry, there are only %d items in %s.%n", itemList.size(), this.getName());
     } else {
         earnings += itemList.get(index).getCost();
         System.out.printf("%s has been sold. Earnings have increased to %f.%n", itemList.get(index).getName(), earnings);
@@ -43,11 +42,11 @@ public class Store {
     for(int i = 0; i < itemList.size(); i++) {
         if(name != itemList.get(i).getName()) {
             if(i < itemList.size() - 1) {
-                System.out.printf("The store doesn't sell %s.%n", name);
+                System.out.printf("%s doesn't sell %s.%n", this.getName(), name);
             }
         } else {
             earnings += itemList.get(i).getCost();
-            System.out.printf("%s has been sold. Earnings have increased to %f.%n", itemList.get(i).getName(), earnings);
+            System.out.printf("%s has been sold. Earnings have increased by %f.%n", itemList.get(i).getName(), earnings);
             break;
         }
     }
@@ -58,7 +57,7 @@ public class Store {
     // print statement indicating the sale
     if(itemList.contains(i)) {
         earnings += i.getCost();
-        System.out.printf("%s has been sold. Earnings have increased to %f.%n", i.getName(), earnings);
+        System.out.printf("%s has been sold. Earnings have increased by %f.%n", i.getName(), earnings);
     }
   }
   public void addItem(Item i){
@@ -68,19 +67,31 @@ public class Store {
   public void filterType(String type){
     // loop over itemList and print all items with the specified type
     for(int i = 0; i < itemList.size(); i++) {
-        if() {
-            
+        if(itemList.get(i).getType().equals(type)) {
+            System.out.printf("%s is a %s.%n", itemList.get(i).getName(), type);
         }
     }
   }
   public void filterCheap(double maxCost){
     // loop over itemList and print all items with a cost lower than or equal to the specified value
+    for(int i = 0; i < itemList.size(); i++) {
+        if(itemList.get(i).getCost() <= maxCost) {
+            System.out.printf("%s's cost is less than or equal to %f.%n", itemList.get(i).getName(), maxCost);
+        }
+    }
   }
   public void filterExpensive(double minCost){
     // loop over itemList and print all items with a cost higher than or equal to the specified value
+    for(int i = 0; i < itemList.size(); i++) {
+        if(itemList.get(i).getCost() >= minCost) {
+            System.out.printf("%s's cost is greater than or equal to %f.%n", itemList.get(i).getName(), minCost);
+        }
+    }
   }
   public static void printStats(){
     // loop over storeList and print the name and the earnings'Store.java'
-
+    for(int i = 0; i < storeList.size(); i++) {
+        System.out.printf("%s got %f.%n", storeList.get(i).getName(), storeList.get(i).getEarnings());
+    }
   }
 }
