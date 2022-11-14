@@ -18,6 +18,7 @@ public class FireType extends Monster {
     }
     
     public void special(String type) {
+        System.out.println(name + " did a pose.");
         atk += 2;
         hp -= 0.1 * maxHP;
     }

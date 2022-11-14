@@ -19,6 +19,40 @@ public class Ex06MuonLegaspi {
         FireType charmander = new FireType("Charmander", "fire", "grass", "water", 100, 50);
         WaterType squirtle = new WaterType("Squirtle", "water", "fire", "grass", 100, 50);
         GrassType bulbasaur = new GrassType("Bulbasaur", "grass", "water", "fire", 100, 50);
+        
+        while(bulbasaur.hp > 0 && charmander.hp > 0) {
+            bulbasaur.attack(charmander);
+            if(charmander.hp <= 0) {
+                break;
+            }
+            charmander.attack(bulbasaur);
+        }
+        bulbasaur.resetHealth();
+        charmander.resetHealth();
+        
+        System.out.printf("%n%n");
+        
+        while(charmander.hp > 0 && squirtle.hp > 0) {
+            charmander.attack(squirtle);
+            if(squirtle.hp <= 0) {
+                break;
+            }
+            squirtle.attack(charmander);
+        }
+        charmander.resetHealth();
+        squirtle.resetHealth();
+        
+        System.out.printf("%n%n");
+        
+        while(squirtle.hp > 0 && bulbasaur.hp > 0) {
+            squirtle.attack(bulbasaur);
+            if(bulbasaur.hp <= 0) {
+                break;
+            }
+            bulbasaur.attack(squirtle);
+        }
+        squirtle.resetHealth();
+        bulbasaur.resetHealth();
     }
     
 }

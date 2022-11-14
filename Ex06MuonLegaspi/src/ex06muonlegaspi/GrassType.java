@@ -14,7 +14,14 @@ public class GrassType extends Monster {
         super(n, "grass", "water", "fire", m, base);
     }
     
+    public void rest() {
+        hp += maxHP * 0.5;
+        if(hp > maxHP) hp = maxHP;
+        System.out.println(name + " rested. It's health is now " + hp + ".");
+    }
+    
     public void special(String type) {
+        System.out.println(name + " did a pose.");
         if(hp < 0.8 * maxHP) {
             hp += 0.2 * maxHP;
         } else {
