@@ -24,9 +24,9 @@ public class Ex11MuonLegaspi {
         Subject bio = new Subject("Biology", "../media/biology.png", 3, 2.0);
         Subject chem = new Subject("Chemistry", "../media/chemistry.png", 3, 1.5);
         Subject physics = new Subject("Physics", "../media/physics.png", 3, 1.75);
-        Subject cs = new Subject("CS", "../media/computer science.png", 1, 1.5);
+        Subject cs = new Subject("CS", "computer science.png", 1, 1.5);
         
-        Subject displayedSubject = math;
+        Subject displayedSubject = cs;
         
         JFrame frame = new JFrame();
         frame.setTitle("Exercise 11 (Swing)");
@@ -34,18 +34,12 @@ public class Ex11MuonLegaspi {
         frame.setSize(480, 480);
         frame.setVisible(true);
         
+        
         JLabel displayedSubjectLabel = new JLabel();
         frame.add(displayedSubjectLabel);
         
-        ImageIcon displayedSubjectImage = new ImageIcon(displayedSubject.getImgFileName());
-        String displayedSubjectName = displayedSubject.getName();
-        double displayedSubjectUnits = displayedSubject.getUnits();
-        double displayedSubjectGrade = displayedSubject.getGrade();
-        
+        ImageIcon displayedSubjectImage = new ImageIcon(displayedSubject.getImgFileName()); 
         displayedSubjectLabel.setIcon(displayedSubjectImage);
-        displayedSubjectLabel.setText(displayedSubjectName);
-        displayedSubjectLabel.setText(Double.toString(displayedSubjectUnits));
-        displayedSubjectLabel.setText(Double.toString(displayedSubjectGrade));
     }
     
 }
