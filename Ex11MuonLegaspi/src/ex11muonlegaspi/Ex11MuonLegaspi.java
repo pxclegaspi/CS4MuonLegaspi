@@ -25,7 +25,7 @@ public class Ex11MuonLegaspi {
         Subject physics = new Subject("Physics", "../media/physics.png", 3, 1.75);
         Subject cs = new Subject("CS", "../media/computer science.png", 1, 1.5);
         
-        Subject displayedSubject = chem;
+        Subject displayedSubject = math;
         
         JFrame frame = new JFrame();
         frame.setTitle("Exercise 11 (Swing)");
@@ -41,6 +41,10 @@ public class Ex11MuonLegaspi {
         displayedSubjectLabel.setHorizontalTextPosition(JLabel.CENTER);
         displayedSubjectLabel.setVerticalTextPosition(JLabel.BOTTOM);
         frame.add(displayedSubjectLabel);
+        
+        JButton navigateButton = new JButton("Next");
+        navigateButton.setSize(100, 100);
+        frame.add(navigateButton);
     }
     
 }
