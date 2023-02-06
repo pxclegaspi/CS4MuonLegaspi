@@ -5,9 +5,8 @@
  */
 package ex11muonlegaspi;
 
-import javax.swing.ImageIcon;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
+import java.awt.*;
+import javax.swing.*;
 
 /**
  *
@@ -24,22 +23,24 @@ public class Ex11MuonLegaspi {
         Subject bio = new Subject("Biology", "../media/biology.png", 3, 2.0);
         Subject chem = new Subject("Chemistry", "../media/chemistry.png", 3, 1.5);
         Subject physics = new Subject("Physics", "../media/physics.png", 3, 1.75);
-        Subject cs = new Subject("CS", "computer science.png", 1, 1.5);
+        Subject cs = new Subject("CS", "../media/computer science.png", 1, 1.5);
         
-        Subject displayedSubject = cs;
+        Subject displayedSubject = chem;
         
         JFrame frame = new JFrame();
         frame.setTitle("Exercise 11 (Swing)");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(480, 480);
         frame.setVisible(true);
-        
+        frame.setLayout(new FlowLayout(FlowLayout.CENTER));
         
         JLabel displayedSubjectLabel = new JLabel();
+        ImageIcon img = new ImageIcon(Ex11MuonLegaspi.class.getResource(displayedSubject.getImgFileName()));
+        displayedSubjectLabel.setIcon(img);
+        displayedSubjectLabel.setText("Name: " + displayedSubject.getName() + " -- Units: " + displayedSubject.getUnits() + " -- Grade: " + displayedSubject.getGrade());
+        displayedSubjectLabel.setHorizontalTextPosition(JLabel.CENTER);
+        displayedSubjectLabel.setVerticalTextPosition(JLabel.BOTTOM);
         frame.add(displayedSubjectLabel);
-        
-        ImageIcon displayedSubjectImage = new ImageIcon(displayedSubject.getImgFileName()); 
-        displayedSubjectLabel.setIcon(displayedSubjectImage);
     }
     
 }
