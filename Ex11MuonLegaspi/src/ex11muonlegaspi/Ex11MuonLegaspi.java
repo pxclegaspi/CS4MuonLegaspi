@@ -6,6 +6,7 @@
 package ex11muonlegaspi;
 
 import java.awt.*;
+import java.util.ArrayList;
 import javax.swing.*;
 
 /**
@@ -19,13 +20,20 @@ public class Ex11MuonLegaspi {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Subject math = new Subject("Math", "../media/math.png", 4, 1.75);
         Subject bio = new Subject("Biology", "../media/biology.png", 3, 2.0);
         Subject chem = new Subject("Chemistry", "../media/chemistry.png", 3, 1.5);
-        Subject physics = new Subject("Physics", "../media/physics.png", 3, 1.75);
         Subject cs = new Subject("CS", "../media/computer science.png", 1, 1.5);
+        Subject math = new Subject("Math", "../media/math.png", 4, 1.75);
+        Subject physics = new Subject("Physics", "../media/physics.png", 3, 1.75);
         
         Subject displayedSubject = math;
+        
+        ArrayList<Subject> SubjectList = new ArrayList();
+        SubjectList.add(bio);
+        SubjectList.add(chem);
+        SubjectList.add(cs);
+        SubjectList.add(math);
+        SubjectList.add(physics);
         
         JFrame frame = new JFrame();
         frame.setTitle("Exercise 11 (Swing)");
