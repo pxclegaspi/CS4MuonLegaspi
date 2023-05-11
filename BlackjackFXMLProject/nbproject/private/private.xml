@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="1">
+        <file>
+            <url>src/blackjackfxmlproject/Player.java</url>
+            <bookmark id="1">
+                <name/>
+                <line>22</line>
+                <key/>
+            </bookmark>
+        </file>
+    </editor-bookmarks>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/D:/Documents/NetBeansProjects/BlackjackFXMLProject/src/blackjackfxmlproject/MainMenu.fxml</file>
+            <file>file:/D:/Documents/NetBeansProjects/BlackjackFXMLProject/src/blackjackfxmlproject/GameController.java</file>
+            <file>file:/D:/Documents/NetBeansProjects/BlackjackFXMLProject/src/blackjackfxmlproject/Card.java</file>
+            <file>file:/D:/Documents/NetBeansProjects/BlackjackFXMLProject/src/blackjackfxmlproject/Blackjack.java</file>
+            <file>file:/D:/Documents/NetBeansProjects/BlackjackFXMLProject/src/blackjackfxmlproject/BlackjackFXMLProject.java</file>
+            <file>file:/D:/Documents/NetBeansProjects/BlackjackFXMLProject/src/blackjackfxmlproject/Player.java</file>
+            <file>file:/D:/Documents/NetBeansProjects/BlackjackFXMLProject/src/blackjackfxmlproject/Game.fxml</file>
+            <file>file:/D:/Documents/NetBeansProjects/BlackjackFXMLProject/src/blackjackfxmlproject/Hand.java</file>
+            <file>file:/D:/Documents/NetBeansProjects/BlackjackFXMLProject/src/blackjackfxmlproject/PauseController.java</file>
+            <file>file:/D:/Documents/NetBeansProjects/BlackjackFXMLProject/src/blackjackfxmlproject/Pause.fxml</file>
+            <file>file:/D:/Documents/NetBeansProjects/BlackjackFXMLProject/src/blackjackfxmlproject/MainMenuController.java</file>
+        </group>
+    </open-files>
+</project-private>
