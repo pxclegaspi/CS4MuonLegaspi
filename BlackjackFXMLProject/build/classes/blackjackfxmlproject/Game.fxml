@@ -5,6 +5,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="blackjackfxmlproject.GameController">
@@ -26,55 +27,41 @@
    <bottom>
       <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fitHeight="129.0" fitWidth="78.0" layoutX="241.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@media/PNG-cards-1.3/king_of_hearts2.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="115.0" fitWidth="81.0" layoutX="279.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@media/PNG-cards-1.3/queen_of_diamonds2.png" />
-               </image>
-            </ImageView>
-            <Label layoutX="372.0" layoutY="101.0" text="Bet: $10" />
-            <Label layoutX="372.0" layoutY="83.0" text="Bank: $50" />
+            <Label layoutX="410.0" layoutY="101.0" text="1" />
+            <Label layoutX="410.0" layoutY="83.0" text="1" />
+            <Label layoutX="410.0" layoutY="118.0" text="1" />
+            <HBox layoutX="200.0" layoutY="36.0" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <ImageView fitHeight="115.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fitHeight="129.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true" />
+               </children>
+            </HBox>
          </children>
       </Pane>
    </bottom>
    <right>
       <Pane prefHeight="49.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <Button layoutX="80.0" layoutY="14.0" mnemonicParsing="false" text="Split" />
-            <Button layoutX="84.0" layoutY="48.0" mnemonicParsing="false" text="Hit" />
-            <Button layoutX="77.0" layoutY="81.0" mnemonicParsing="false" text="Stand" />
+            <Button layoutX="130.0" layoutY="180.0" mnemonicParsing="false" text="Split" />
+            <Button layoutX="130.0" layoutY="210.0" mnemonicParsing="false" text="Hit" />
+            <Button layoutX="130.0" layoutY="240.0" mnemonicParsing="false" text="Stand" />
          </children>
       </Pane>
    </right>
    <left>
       <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fitHeight="121.0" fitWidth="84.0" layoutX="58.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@media/back.png" />
-               </image>
-            </ImageView>
+            <Label text="Label" />
+            <Label layoutY="17.0" text="Label" />
          </children>
       </Pane>
    </left>
    <center>
-      <Pane prefHeight="211.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+      <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fitHeight="150.0" fitWidth="89.0" layoutX="29.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@media/back.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="115.0" fitWidth="89.0" layoutX="78.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@media/PNG-cards-1.3/7_of_clubs.png" />
-               </image>
-            </ImageView>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
          </children>
-      </Pane>
+      </HBox>
    </center>
 </BorderPane>
