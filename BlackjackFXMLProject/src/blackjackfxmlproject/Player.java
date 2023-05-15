@@ -24,4 +24,9 @@ public class Player {
     public ArrayList getHandList() {
         return HandList;
     }
+    
+    public Player(String n, double m) {
+        name = n;
+        money = m;
+    }
 }

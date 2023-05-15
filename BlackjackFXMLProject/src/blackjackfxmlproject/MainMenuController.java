@@ -21,6 +21,7 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.control.TextInputDialog;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
@@ -55,10 +56,7 @@ public class MainMenuController implements Initializable {
     
     @FXML
     private void playGame(Event event) throws IOException {
-//        TextInputDialog dialog0 = new TextInputDialog("1");
-//        dialog0.setTitle("Number of Players");
-//        dialog0.setHeaderText("You goin' alone or with friends?");
-//        dialog0.setContentText("Enter the number of players to play.");
+
 //        
 //        Optional<String> result = dialog0.showAndWait();
 //        if (result.isPresent()){
@@ -71,15 +69,28 @@ public class MainMenuController implements Initializable {
 //            thisStage.hide();
 //            stage.show();
 //        }
-        
-        TextInputDialog dialog1 = new TextInputDialog("1000");
-        dialog1.setTitle("Initial Money");
-        dialog1.setHeaderText("You don't wanna be broke, do you?");
-        dialog1.setContentText("Enter the amount of money to have at the start of the game.");
-
-        // Traditional way to get the response value.
-        Optional<String> result = dialog1.showAndWait();
-        if (result.isPresent()){
+        TextInputDialog dialog0 = new TextInputDialog("1");
+        dialog0.setTitle("Number of Players");
+        dialog0.setHeaderText("You goin' alone or with friends?");
+        dialog0.setContentText("Enter the number of players to play.");
+        Optional<String> playerResult = dialog0.showAndWait();
+        if (playerResult.isPresent()) {
+            System.out.println(playerResult);
+            int numberOfPlayers = Integer.parseInt(playerResult.toString());
+            dialog0.close();
+            for(int i = 0; i < numberOfPlayers; i++) {
+                TextInputDialog dialog1 = new TextInputDialog();
+                dialog1.setTitle("Initial Money");
+                dialog1.setHeaderText("You don't wanna be broke, do you?");
+                dialog1.setContentText("Player " + Integer.toString(i + 1) + ", enter your name and the amount of money you will have at the start of the game.");
+                TextField name = new TextField();
+                TextField money = new TextField();
+                
+                Optional<String> nameResult = dialog1.showAndWait();
+                //if (nameResult.isPresent() && moneyResult.isPresent()) {
+                //    Player addedPlayer = new Player(nameResult.toString(), Double.parseDouble(moneyResult.toString()));
+                //}
+            }
             FXMLLoader loader = new FXMLLoader(getClass().getResource("Game.fxml"));
             Parent root = loader.load();
             Stage stage = new Stage();
