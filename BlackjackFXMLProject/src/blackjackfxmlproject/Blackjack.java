@@ -12,11 +12,11 @@ import java.util.Collections;
  * @author Patric Legaspi
  */
 public class Blackjack {
-    private ArrayList PlayersPlaying = new ArrayList();
+    private static ArrayList PlayersPlaying = new ArrayList();
     private ArrayList DealerCardsHeld = new ArrayList();
     private int dealerCardsHeldValue;
     
-    public ArrayList getPlayersPlaying() {
+    public static ArrayList getPlayersPlaying() {
         return PlayersPlaying;
     }
     public ArrayList getDealerCardsHeld() {
@@ -26,10 +26,8 @@ public class Blackjack {
         return dealerCardsHeldValue;
     }
     
-    public void addPlayer(Player p, ArrayList PP) {
-        PlayersPlaying = PP;
+    public static void addPlayer(Player p) {
         PlayersPlaying.add(p);
-        PP = PlayersPlaying;
     }
     
     public void dealCards(ArrayList HA) {

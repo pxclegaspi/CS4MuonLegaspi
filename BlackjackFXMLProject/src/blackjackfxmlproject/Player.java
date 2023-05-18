@@ -29,4 +29,11 @@ public class Player {
         name = n;
         money = m;
     }
+    public Player(String n) {
+        name = n;
+    }
+    
+    public void initialMoney(double m) {
+        money = m;
+    }
 }

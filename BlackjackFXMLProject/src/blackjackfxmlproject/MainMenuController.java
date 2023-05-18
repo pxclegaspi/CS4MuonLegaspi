@@ -75,21 +75,33 @@ public class MainMenuController implements Initializable {
         dialog0.setContentText("Enter the number of players to play.");
         Optional<String> playerResult = dialog0.showAndWait();
         if (playerResult.isPresent()) {
-            System.out.println(playerResult);
-            int numberOfPlayers = Integer.parseInt(playerResult.toString());
+            //System.out.println();
+            int numberOfPlayers = Integer.parseInt(playerResult.get());
             dialog0.close();
             for(int i = 0; i < numberOfPlayers; i++) {
                 TextInputDialog dialog1 = new TextInputDialog();
-                dialog1.setTitle("Initial Money");
-                dialog1.setHeaderText("You don't wanna be broke, do you?");
-                dialog1.setContentText("Player " + Integer.toString(i + 1) + ", enter your name and the amount of money you will have at the start of the game.");
-                TextField name = new TextField();
-                TextField money = new TextField();
+                dialog1.setTitle("Name");
+                dialog1.setHeaderText("What's your name, man?");
+                dialog1.setContentText("Player " + Integer.toString(i + 1) + ", enter your name.");
                 
                 Optional<String> nameResult = dialog1.showAndWait();
-                //if (nameResult.isPresent() && moneyResult.isPresent()) {
-                //    Player addedPlayer = new Player(nameResult.toString(), Double.parseDouble(moneyResult.toString()));
-                //}
+                if (nameResult.isPresent()) {
+                    Player addedPlayer = new Player(nameResult.get());
+                    TextInputDialog dialog2 = new TextInputDialog();
+                    dialog2.setTitle("Initial Money");
+                    dialog2.setHeaderText("You don't wanna be broke, do you?");
+                    dialog2.setContentText("Hi, " + addedPlayer.getName() + ". enter the amount of money you will have at the start of the game.");
+                    
+                    Optional<String> moneyResult = dialog2.showAndWait();
+                    if(moneyResult.isPresent()) {
+                        addedPlayer.initialMoney(Double.parseDouble(moneyResult.get()));
+                        Blackjack.addPlayer(addedPlayer);
+                    }
+                }
+            }
+            for(int i=0; i<Blackjack.getPlayersPlaying().size(); i++) {
+                System.out.println(((Player) (Blackjack.getPlayersPlaying().get(i))).getName());
+                System.out.println(((Player) (Blackjack.getPlayersPlaying().get(i))).getMoney());
             }
             FXMLLoader loader = new FXMLLoader(getClass().getResource("Game.fxml"));
             Parent root = loader.load();
